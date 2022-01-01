@@ -1,5 +1,10 @@
 # shop-shop
+
 Bootcamp Module 22
+
+Project is in development. This is the stater code. Will conver application to use Apollo/GraphQL for backend.
+
+Project focused on `State`
 
 ## [Heroku Live app]()
 
@@ -9,11 +14,9 @@ Bootcamp Module 22
 
 ## Back End: ?
 
-
 ## scripts
 
 "scripts": {
-
 
 # Contributions by:
 
