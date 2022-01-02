@@ -7,6 +7,8 @@ import spinner from '../assets/spinner.gif';
 //22.1.6
 import { useStoreContext } from '../utils/GlobalState';
 import { UPDATE_PRODUCTS } from '../utils/actions';
+//22.2.4
+import Cart from '../components/Cart';
 
 function Detail() {
   //22.1.6
@@ -33,6 +35,7 @@ function Detail() {
 
   return (
     <>
+    
       {currentProduct ? (
         <div className='container my-1'>
           <Link to='/'>← Back to Products</Link>
@@ -54,6 +57,7 @@ function Detail() {
         </div>
       ) : null}
       {loading ? <img src={spinner} alt='loading' /> : null}
+    <Cart />
     </>
   );
 }
