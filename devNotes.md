@@ -10,4 +10,7 @@ Project has been seeded
 
 ... now lets break it.
 
-# Continue on 22.1.4
+## Full setup for Global State is within 22.1.3 and 22.1.5
+
+
+# Continue on 22.3.
