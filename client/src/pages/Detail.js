@@ -15,6 +15,8 @@ import {
 } from '../utils/actions';
 //22.2.4
 import Cart from '../components/Cart';
+//22.3.4
+import { idbPromise } from '../utils/helpers';
 
 function Detail() {
   //22.1.6
@@ -54,15 +56,30 @@ function Detail() {
   };
 
   useEffect(() => {
+    // already in global store
     if (products.length) {
       setCurrentProduct(products.find((product) => product._id === id));
-    } else if (data) {
+    }
+    // retrieved from server
+    else if (data) {
       dispatch({
         type: UPDATE_PRODUCTS,
         products: data.products,
       });
+
+      data.products.forEach((product) => {
+        idbPromise('products', 'put', product);
+      });
+    } // get cache from idb
+    else if (!loading) {
+      idbPromise('products', 'get').then((indexedProducts) => {
+        dispatch({
+          type: UPDATE_PRODUCTS,
+          products: indexedProducts,
+        });
+      });
     }
-  }, [products, data, dispatch, id]);
+  }, [products, data, loading, dispatch, id]);
 
   return (
     <>
