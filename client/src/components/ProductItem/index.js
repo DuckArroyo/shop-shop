@@ -4,6 +4,9 @@ import { pluralize } from '../../utils/helpers';
 //22.2.6
 import { useStoreContext } from '../../utils/GlobalState';
 import { ADD_TO_CART, UPDATE_CART_QUANTITY } from '../../utils/actions';
+//22.3.5
+import { idbPromise } from "../../utils/helpers";
+
 
 function ProductItem(item) {
   const { image, name, _id, price, quantity } = item;
@@ -21,13 +24,18 @@ function ProductItem(item) {
       dispatch({
         type: UPDATE_CART_QUANTITY,
         _id: _id,
-        purchaseQuantity: parseInt(itemInCart.purchaseQuantity) + 1,
+        purchaseQuantity: parseInt(itemInCart.purchaseQuantity) + 1
+      });
+      idbPromise('cart', 'put', {
+        ...itemInCart,
+        purchaseQuantity: parseInt(itemInCart.purchaseQuantity) + 1
       });
     } else {
       dispatch({
         type: ADD_TO_CART,
-        product: { ...item, purchaseQuantity: 1 },
+        product: { ...item, purchaseQuantity: 1 }
       });
+      idbPromise('cart', 'put', { ...item, purchaseQuantity: 1 });
     }
   };
 
