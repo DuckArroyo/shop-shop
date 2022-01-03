@@ -7,9 +7,9 @@ Project is in development. This is the stater code. Will conver application to u
 Project focused on `State`
 
 1/2/22 - not deploying this version of the application. (It functions but will deploy Redux version.)
-Link below will be to Redux version.
+Link below is to Redux/deploed version on Heroku.
 
-## [Heroku Live app]()
+## [Heroku Live app](https://mysterious-falls-12204.herokuapp.com/)
 
 ## At the root level: Scripts and dependencies
 
