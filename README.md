@@ -6,6 +6,9 @@ Project is in development. This is the stater code. Will conver application to u
 
 Project focused on `State`
 
+1/2/22 - not deploying this version of the application. (It functions but will deploy Redux version.)
+Link below will be to Redux version.
+
 ## [Heroku Live app]()
 
 ## At the root level
