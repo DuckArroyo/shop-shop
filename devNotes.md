@@ -12,5 +12,4 @@ Project has been seeded
 
 ## Full setup for Global State is within 22.1.3 and 22.1.5
 
-
-# Continue on 22.3.
+# Continue on 22.3.3
